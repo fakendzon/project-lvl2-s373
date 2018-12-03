@@ -1,0 +1,26 @@
+{
+    "bin": [
+        "bin/gendiff"
+    ],
+    "name": "potapov/project-lvl2-s373",
+    "type": "project",
+    "description":"diff files",
+    "keywords": [
+        "diff",
+        "console"
+    ],
+    "authors": [
+        {
+            "name": "Mikhail Potapov",
+            "email": "mihal_palich.93@mail.ru"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/index.php"
+        ]
+    },
+    "require": {
+        "docopt/docopt": "^1.0"
+    }
+}
