@@ -15,12 +15,18 @@
             "email": "mihal_palich.93@mail.ru"
         }
     ],
+    "scripts": {
+        "phpcs": "phpcs"
+    },
     "autoload": {
         "files": [
-            "src/index.php"
+            "src/diff.php"
         ]
     },
     "require": {
         "docopt/docopt": "^1.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*"
     }
 }
