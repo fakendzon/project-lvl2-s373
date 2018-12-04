@@ -17,5 +17,5 @@ Options:
   --format <fmt>                Report format [default: pretty]
 DOC;
 
-    $args = (new \Docopt\Handler)->handle($doc);
+    $args = (new \Docopt\Handler())->handle($doc);
 }
