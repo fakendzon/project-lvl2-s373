@@ -21,7 +21,9 @@
     },
     "autoload": {
         "files": [
-            "src/diff.php"
+            "src/diff.php",
+            "src/converter.php",
+            "src/viewer.php"
         ]
     },
     "require": {

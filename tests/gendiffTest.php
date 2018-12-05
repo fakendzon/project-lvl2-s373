@@ -3,29 +3,21 @@
 namespace GenerateDiff\Tests;
 
 use \PHPUnit\Framework\TestCase;
-use function \GenerateDiff\showDiff;
+use function Differ\Diff\generateDiff;
 
 class GendiffTest extends TestCase
 {
-    public function testShowDiff()
+    public function testGenerateDiff()
     {
-        $before = [
-            "host"    => "hexlet.io",
-            "timeout" => 50,
-            "proxy"   => "123.234.53.22"
-        ];
+        $actual = generateDiff(__DIR__.'/before.json', __DIR__.'/after.json');
+        $expected = json_encode([
+            'host'      => 'hexlet.io',
+            '+ timeout' => 20,
+            '- timeout' => 50,
+            '- proxy'   => '123.234.53.22',
+            '+ verbose' => true
+        ], JSON_PRETTY_PRINT);
 
-        $after = [
-            "host"    => "hexlet.io",
-            "timeout" => 50,
-            "proxy"   => "123.234.53.22"
-        ];
-//        {
-//            "timeout": 20,
-//  "verbose": true,
-//  "host": "hexlet.io"
-//}
-
-        $this->assertEquals(1, 1);
+        $this->assertEquals($expected, $actual);
     }
 }
