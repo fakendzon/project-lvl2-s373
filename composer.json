@@ -21,13 +21,15 @@
     },
     "autoload": {
         "files": [
-            "src/diff.php",
-            "src/converter.php",
-            "src/viewer.php"
+            "src/Diff.php",
+            "src/Converter.php",
+            "src/Viewer.php",
+            "src/Cli.php"
         ]
     },
     "require": {
-        "docopt/docopt": "^1.0"
+        "docopt/docopt": "^1.0",
+        "funct/funct": "^1.4"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "*",
