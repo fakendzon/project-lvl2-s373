@@ -4,8 +4,6 @@ namespace Differ\Diff;
 
 use function Differ\Converter\toArray;
 use function Differ\Viewer\showJson;
-use function Funct\Collection\flatten;
-use function Funct\Collection\flattenAll;
 use function Funct\Collection\union;
 
 const MARK_ADDED   = '+';

@@ -21,5 +21,5 @@ DOC;
 
     $args = (new \Docopt\Handler())->handle($doc);
 
-    var_export(generateDiff($args->args['<firstFile>'], $args->args['<secondFile>']));
+    print_r(generateDiff($args->args['<firstFile>'], $args->args['<secondFile>']));
 }
