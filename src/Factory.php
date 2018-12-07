@@ -2,6 +2,8 @@
 
 namespace Differ\Factory;
 
+use Symfony\Component\Yaml\Yaml;
+
 const JSON = 'json';
 const YAML = 'yml';
 
