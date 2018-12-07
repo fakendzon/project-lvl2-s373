@@ -22,9 +22,10 @@
     "autoload": {
         "files": [
             "src/Diff.php",
-            "src/Converter.php",
             "src/Viewer.php",
-            "src/Cli.php"
+            "src/Cli.php",
+            "src/Factory.php",
+            "src/Controller.php"
         ]
     },
     "require": {

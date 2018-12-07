@@ -3,7 +3,7 @@
 namespace Differ\Tests;
 
 use \PHPUnit\Framework\TestCase;
-use function Differ\Diff\generateDiff;
+use function Differ\Controller\getDiffFiles;
 
 class GendiffTest extends TestCase
 {
@@ -11,7 +11,7 @@ class GendiffTest extends TestCase
 
     public function testDiffJson()
     {
-        $actual = generateDiff(self::DIR_FIXTURES . 'before.json', self::DIR_FIXTURES . '/after.json');
+        $actual   = getDiffFiles(self::DIR_FIXTURES . 'before.json', self::DIR_FIXTURES . '/after.json');
         $expected = json_encode(file_get_contents(self::DIR_FIXTURES . 'result.json'));
 
         $this->assertJson($expected, $actual);
