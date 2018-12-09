@@ -2,10 +2,12 @@
 
 namespace Differ\Diff;
 
+use function Funct\Collection\flattenAll;
 use function Funct\Collection\union;
 
 const MARK_ADDED   = '+';
 const MARK_REMOVED = '-';
+const MARK_EQUAL   = '  ';
 
 function generateDiff($data1, $data2)
 {
@@ -15,21 +17,18 @@ function generateDiff($data1, $data2)
         if (array_key_exists($key, $data1) && array_key_exists($key, $data2)) {
             if ($item != $data1[$key]) {
                 return [
-                    MARK_ADDED . " " . $key   => $item,
-                    MARK_REMOVED . " " . $key => $data1[$key]
+                    MARK_ADDED . " {$key}: {$item}",
+                    MARK_REMOVED . " {$key}: {$data1[$key]}"
                 ];
             } else {
-                return [$key => $item];
+                return MARK_EQUAL . "{$key}: {$item}";
             }
         } elseif (array_key_exists($key, $data1)) {
-            return [MARK_REMOVED . " " . $key => $item];
+            return MARK_REMOVED . " {$key}: {$item}";
         } elseif (array_key_exists($key, $data2)) {
-            return [MARK_ADDED . " " . $key => $item];
+            return MARK_ADDED . " {$key}: {$item}";
         }
     }, array_keys($union), $union);
 
-    return array_reduce($diff, function ($acc, $item) {
-        $acc = array_merge($acc, $item);
-        return $acc;
-    }, []);
+    return flattenAll($diff);
 }

@@ -27,7 +27,9 @@ function toArray($format, $fileContent)
             break;
     }
 
-    return $result;
+    return array_map(function ($item) {
+        return is_bool($item) ? json_encode($item) : $item;
+    }, $result);
 }
 
 function getFileExtension($fileName)

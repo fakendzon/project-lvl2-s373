@@ -12,16 +12,14 @@ class GendiffTest extends TestCase
     public function testDiffJson()
     {
         $actual   = getDiffFiles(self::DIR_FIXTURES . 'before.json', self::DIR_FIXTURES . '/after.json');
-        $expected = json_encode(file_get_contents(self::DIR_FIXTURES . 'result.json'));
-
-        $this->assertJson($expected, $actual);
+        $expected = file_get_contents(self::DIR_FIXTURES . 'result.json');
+        $this->assertEquals($expected, $actual);
     }
 
     public function testDiffYml()
     {
         $actual = getDiffFiles(self::DIR_FIXTURES . 'before.yml', self::DIR_FIXTURES . '/after.yml');
-        $expected = json_encode(file_get_contents(self::DIR_FIXTURES . 'result.json'));
-
-        $this->assertJson($expected, $actual);
+        $expected = file_get_contents(self::DIR_FIXTURES . 'result.json');
+        $this->assertEquals($expected, $actual);
     }
 }
