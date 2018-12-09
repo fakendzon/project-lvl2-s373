@@ -3,7 +3,7 @@
 namespace Differ\Tests;
 
 use \PHPUnit\Framework\TestCase;
-use function Differ\Controller\getDiffFiles;
+use function Differ\FileController\getDiffFiles;
 
 class GendiffTest extends TestCase
 {

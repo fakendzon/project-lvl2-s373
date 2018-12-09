@@ -25,7 +25,7 @@
             "src/Viewer.php",
             "src/Cli.php",
             "src/Factory.php",
-            "src/Controller.php"
+            "src/FileController.php"
         ]
     },
     "require": {

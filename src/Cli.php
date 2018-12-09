@@ -2,7 +2,7 @@
 
 namespace Differ\Cli;
 
-use function Differ\Controller\getDiffFiles;
+use function Differ\FileController\getDiffFiles;
 
 function run()
 {
