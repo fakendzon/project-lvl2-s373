@@ -24,8 +24,7 @@
             "src/Diff.php",
             "src/Viewer.php",
             "src/Cli.php",
-            "src/Factory.php",
-            "src/FileController.php"
+            "src/Factory.php"
         ]
     },
     "require": {
