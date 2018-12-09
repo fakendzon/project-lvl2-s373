@@ -2,7 +2,7 @@
 
 namespace Differ\Cli;
 
-use function Differ\FileController\getDiffFiles;
+use function Differ\Diff\generateDiffFiles;
 
 function run()
 {
@@ -21,5 +21,5 @@ DOC;
 
     $args = (new \Docopt\Handler())->handle($doc);
 
-    print_r(getDiffFiles($args->args['<firstFile>'], $args->args['<secondFile>']));
+    print_r(generateDiffFiles($args->args['<firstFile>'], $args->args['<secondFile>']));
 }

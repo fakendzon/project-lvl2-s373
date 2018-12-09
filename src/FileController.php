@@ -3,13 +3,13 @@
 namespace Differ\FileController;
 
 use function Differ\Diff\generateDiff;
-use function Differ\Factory\getFileData;
-use function Differ\Viewer\presentationDiff;
+use function Differ\Factory\buildFileObject;
+use function Differ\Viewer\getPresentationDiff;
 
 function getDiffFiles($filePath1, $filePath2)
 {
-    $fileData1 = getFileData($filePath1);
-    $fileData2 = getFileData($filePath2);
-    $diff      = generateDiff($fileData1['toArray'], $fileData2['toArray']);
-    return presentationDiff($diff);
+    $fileObj1 = buildFileObject($filePath1);
+    $fileObj2 = buildFileObject($filePath2);
+    $diff     = generateDiff($fileObj1['contentToArray'], $fileObj2['contentToArray']);
+    return getPresentationDiff($diff);
 }

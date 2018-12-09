@@ -7,23 +7,23 @@ use Symfony\Component\Yaml\Yaml;
 const JSON = 'json';
 const YAML = 'yml';
 
-function getFileData($filePath)
+function buildFileObject($filePath)
 {
     $format      = getFileExtension($filePath);
     $fileContent = getFileContent($filePath);
-    return ['toArray' => toArray($format, $fileContent)];
+    return ['contentToArray' => toArray($format, $fileContent)];
 }
 
-function toArray($format, $fileContent)
+function toArray($format, $content)
 {
     $result = [];
 
     switch ($format) {
         case JSON:
-            $result = json_decode($fileContent, true);
+            $result = json_decode($content, true);
             break;
         case YAML:
-            $result = Yaml::parse($fileContent, true);
+            $result = Yaml::parse($content, true);
             break;
     }
 
