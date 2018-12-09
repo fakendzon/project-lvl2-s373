@@ -14,16 +14,16 @@ function buildFileObject($filePath)
     return ['contentToArray' => toArray($format, $fileContent)];
 }
 
-function toArray($format, $content)
+function toArray($format, $data)
 {
     $result = [];
 
     switch ($format) {
         case JSON:
-            $result = json_decode($content, true);
+            $result = json_decode($data, true);
             break;
         case YAML:
-            $result = Yaml::parse($content, true);
+            $result = Yaml::parse($data, true);
             break;
     }
 
