@@ -9,3 +9,6 @@
 
 ## diff json files
 [![asciicast](https://asciinema.org/a/LCQBl4XXQLwKqIpmydeQqYPHC.png)](https://asciinema.org/a/LCQBl4XXQLwKqIpmydeQqYPHC?speed=4&size=medium)
+
+## diff yaml files
+[![asciicast](https://asciinema.org/a/LEzEylB3yrEzLy9VLhS6YFgXk.png)](https://asciinema.org/a/LEzEylB3yrEzLy9VLhS6YFgXk?speed=4&size=medium)
